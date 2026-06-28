@@ -1,0 +1,21 @@
+[ req ]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_req
+prompt = no
+
+[ req_distinguished_name ]
+C = UK
+O = SampleOrganization
+CN = Open62541Client@localhost
+
+[ v3_req ]
+# Add your Subject Alternative Names here
+subjectAltName = @alt_names
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment, dataEncipherment, nonRepudiation
+extendedKeyUsage = clientAuth, serverAuth
+
+[ alt_names ]
+DNS.1 = localhost
+DNS.2 = Teds-MacBook-Pro.local
+URI.1 = urn:open62541.unconfigured.application
